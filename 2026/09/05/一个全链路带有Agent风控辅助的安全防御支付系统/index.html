@@ -94,7 +94,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2026-09-05T06:00:00.000Z">
-<meta property="article:modified_time" content="2026-09-05T15:48:18.938Z">
+<meta property="article:modified_time" content="2026-09-06T05:32:56.765Z">
 <meta property="article:author" content="S12lx0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
@@ -326,8 +326,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-09-05 23:48:18</span>
-            <span class="mobile">2026-09-05 23:48:18</span>
+            <span class="desktop">2026-09-06 13:32:56</span>
+            <span class="mobile">2026-09-06 13:32:56</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -382,7 +382,7 @@
 <li><p>安全层增强组件：JWT认证拦截器、接口限流拦截器、手机号数据脱敏</p>
 </li>
 </ul>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line">    A[客户端发起请求] --&gt; B[安全检验层&lt;br&gt;XSS过滤 / 限流防刷 / JWT认证]</span><br><span class="line"></span><br><span class="line">    B --&gt; C&#123;业务分发&#125;</span><br><span class="line"></span><br><span class="line">    C --&gt;|注册| D[BCrypt加密密码存入数据库]</span><br><span class="line">    C --&gt;|登录| E[校验密码并颁发JWT Token]</span><br><span class="line">    C --&gt;|支付| F[Agent风控决策引擎]</span><br><span class="line"></span><br><span class="line">    F --&gt; G&#123;硬编码护栏&lt;br&gt;金额&gt;=5000 / IP异常 / 高频&#125;</span><br><span class="line"></span><br><span class="line">    G --&gt;|触发规则| H[直接下发指令&lt;br&gt;BLOCK 或 SMS_VERIFY]</span><br><span class="line">    G --&gt;|安全范围内| I[AI推理&lt;br&gt;调用DeepSeek大模型]</span><br><span class="line"></span><br><span class="line">    I --&gt; K[AI下发指令：ALLOW放行]</span><br><span class="line">    H --&gt; J[执行动作&lt;br&gt;拦截交易 / 发送验证码]</span><br><span class="line"></span><br><span class="line">    J --&gt; L[记录审计日志]</span><br><span class="line">    K --&gt; M[执行支付事务]</span><br><span class="line"></span><br><span class="line">    M --&gt; N[原子操作&lt;br&gt;扣减余额 + 生成订单]</span><br><span class="line">    N --&gt; L</span><br><span class="line">    L --&gt; O[返回响应给客户端]</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line">    A[客户端发起请求] --&gt; B[安全检验层&lt;br&gt;XSS过滤 / 限流防刷 / JWT认证]</span><br><span class="line"></span><br><span class="line">    B --&gt; C&#123;业务分发&#125;</span><br><span class="line"></span><br><span class="line">    C --&gt;|注册| D[BCrypt加密密码存入数据库]</span><br><span class="line">    C --&gt;|登录| E[校验密码并颁发JWT Token]</span><br><span class="line">    C --&gt;|支付| F[Agent风控决策引擎]</span><br><span class="line"></span><br><span class="line">    F --&gt; G&#123;硬编码护栏&lt;br&gt;金额&gt;=5000 / IP异常 / 高频&#125;</span><br><span class="line"></span><br><span class="line">    G --&gt;|触发规则| H[直接下发指令&lt;br&gt;BLOCK 或 SMS_VERIFY]</span><br><span class="line">    G --&gt;|安全范围内| I[AI推理&lt;br&gt;调用DeepSeek大模型]</span><br><span class="line"></span><br><span class="line">    I --&gt; K[AI下发指令：ALLOW放行]</span><br><span class="line">    H --&gt; J[执行动作&lt;br&gt;拦截交易 / 发送验证码]</span><br><span class="line"></span><br><span class="line">    J --&gt; L[记录审计日志]</span><br><span class="line">    K --&gt; M[执行支付事务]</span><br><span class="line"></span><br><span class="line">    M --&gt; N[扣减余额 + 生成订单]</span><br><span class="line">    N --&gt; L</span><br><span class="line">    L --&gt; O[返回响应给客户端]</span><br></pre></td></tr></table></figure></div>
 
 <h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><p>用<strong>Spring Initializr</strong>生成<strong>Spring Boot</strong>框架，填写项目基本信息与添加依赖</p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://start.github.io/" >https://start.github.io<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
@@ -390,7 +390,7 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="C:\Users\slx\OneDrive\Desktop\image2\payment-system\payment-system-spring-initializr.png"
+                     data-src="/!%5B%5D(%5Cimages%5Cpayment-system%5Cpayment-system-spring-initializr.png)"
                       alt="payment-system-spring-initializr.png"
                 ></p>
 <p>Spring Boot只能选择<strong>4.0.8</strong>，MyBatis的依赖添加要在版本4.0.0~4.1.0</p>
@@ -679,7 +679,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2026-09-05 23:48:18
+                    :</strong> 2026-09-06 13:32:56
             </li>
         
         <li>
